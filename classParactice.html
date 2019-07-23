@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number">
+    <button onclick="guessTheNumber()">Check</button>
+</body>
+
+</html>
+<script>
+
+    let randomNumber;
+    let count;
+
+    function resetGame() {
+        randomNumber = parseInt(Math.random() * 100);
+        count = 0;
+    }
+      resetGame();
+    function guessTheNumber() {
+        let input = document.querySelector("input").value;
+       
+            if (input < randomNumber) {
+                alert("too small");
+                count++;
+            }
+            else if (input > randomNumber) {
+                alert("too big");
+                count++;
+            }
+            else {
+                alert("Congratulations!!" + count);
+                resetGame();
+            }
+        }
+</script>
